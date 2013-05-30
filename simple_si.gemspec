@@ -7,4 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Forrest Grant"]
   s.email				= "forrest@forrestgrant.com"
   s.homepage		= "http://github.com/forrestgrant/simple_si"
+
+  s.require_paths = ["lib"]
+  s.files         = `git ls-files`.split($\)
 end
