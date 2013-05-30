@@ -19,7 +19,7 @@ require 'simple_si'
 ```
 or
 
-Add simple_si to your Gemfile:
+Add simple_si to your Gemfile, and run `bundle install`:
 ```ruby
 gem 'simple_si'
 ```
@@ -48,7 +48,7 @@ You can also leverage the following transitions:
 # SIAlertViewTransitionStyleDropDown
 
 SimpleSI.alert('Hello World!', SIAlertViewTransitionStyleDropDown)
-
+```
 ## To-do
 
 * Write specs
