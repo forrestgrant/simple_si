@@ -1,4 +1,4 @@
-module SimpleSI
+class SimpleSI
 	
 	def self.alert(text, transition_style = SIAlertViewTransitionStyleSlideFromBottom)
     alert = SIAlertView.alloc.initWithTitle(nil, andMessage:text)
