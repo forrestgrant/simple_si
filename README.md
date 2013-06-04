@@ -57,9 +57,9 @@ You can leverage the following transitions:
 
 And the following button types:
 ```ruby
-SIAlertViewButtonTypeDefault
-SIAlertViewButtonTypeDestructive
-SIAlertViewButtonTypeCancel
+# SIAlertViewButtonTypeDefault
+# SIAlertViewButtonTypeDestructive
+# SIAlertViewButtonTypeCancel
 ```
 
 ## To-do
