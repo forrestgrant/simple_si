@@ -33,22 +33,35 @@ Basic:
 SimpleSI.alert('Hello World!')
 ```
 
-If you want a title:
-
+Custom:
 ```ruby
-SimpleSI.alert_with_title('My App', 'Hello World!')
+SimpleSI.alert({
+  title: "My App",
+  message: "Are you sure?",
+  transition: SIAlertViewTransitionStyleDropDown,
+  buttons: [
+    {title: "Destroy", type: SIAlertViewButtonTypeDestructive, action: :destroy},
+    {title: "Cancel", type: SIAlertViewButtonTypeCancel, action: :cancel}
+  ]
+})
 ```
 
-You can also leverage the following transitions:
+You can leverage the following transitions:
 ```ruby
 # SIAlertViewTransitionStyleSlideFromBottom (default)
 # SIAlertViewTransitionStyleSlideFromTop
 # SIAlertViewTransitionStyleFade
 # SIAlertViewTransitionStyleBounce
 # SIAlertViewTransitionStyleDropDown
-
-SimpleSI.alert('Hello World!', SIAlertViewTransitionStyleDropDown)
 ```
+
+And the following button types:
+```ruby
+SIAlertViewButtonTypeDefault
+SIAlertViewButtonTypeDestructive
+SIAlertViewButtonTypeCancel
+```
+
 ## To-do
 
 * Write specs

@@ -1,16 +1,22 @@
-class SimpleSI
-	
-	def self.alert(text, transition_style = SIAlertViewTransitionStyleSlideFromBottom)
-    alert = SIAlertView.alloc.initWithTitle(nil, andMessage:text)
-    alert.transitionStyle = transition_style
-    alert.addButtonWithTitle("OK", type:SIAlertViewButtonTypeDefault, handler:nil)
-    alert.show
-	end
+module SimpleSI
 
-	def self.alert_with_title(title, text, transition_style = SIAlertViewTransitionStyleSlideFromBottom)
-    alert = SIAlertView.alloc.initWithTitle(title, andMessage:text)
-    alert.transitionStyle = transition_style
-    alert.addButtonWithTitle("OK", type:SIAlertViewButtonTypeDefault, handler:nil)
+  def self.alert(args = {})
+    args.kind_of?(String) ? build({ message: args }) : build(args)
+  end
+
+  def self.build(args)
+    @message = args[:message] || "No message"
+    @title = args[:title] || nil
+    @transition = args[:transition] || SIAlertViewTransitionStyleSlideFromBottom
+    @buttons = args[:buttons] || [{title: "OK", type: SIAlertViewButtonTypeDefault, action: nil}]
+
+    alert = SIAlertView.alloc.initWithTitle(@title, andMessage:@message)
+    alert.transitionStyle = @transition
+
+    @buttons.each do |b|
+      alert.addButtonWithTitle(b[:title], type: b[:type], handler: b[:action])
+    end
+
     alert.show
   end
 
