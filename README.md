@@ -52,9 +52,9 @@ SimpleSI.alert({
 
 Here's the string you can pass to the transition property of the constructor (secondary). The default value is `"slide from bottom"`.
 
-* `"drop down"`
-* `"slide from down"`
-* `"slide from up"`
+* `"drop_down"`
+* `"slide_from_top"`
+* `"slide_from_bottom"`
 * `"fade"`
 * `"bounce"`
 
