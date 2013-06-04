@@ -38,29 +38,32 @@ Custom:
 SimpleSI.alert({
   title: "My App",
   message: "Are you sure?",
-  transition: SIAlertViewTransitionStyleDropDown,
+  transition: "drop down", # or "slide from down", "slide from up", "fade" or "bounce"
   buttons: [
-    {title: "Destroy", type: SIAlertViewButtonTypeDestructive, action: :destroy},
-    {title: "Cancel", type: SIAlertViewButtonTypeCancel, action: :cancel}
-  ]
+    {title: "Destroy", action: :destroy}, # no type specify become default styling
+    {title: "Cancel", type: "cancel"} # action is secondary
+  ],
+  delegate: self # Needed if you want to call method of a class with your button
 })
 ```
 
-You can leverage the following transitions:
-```ruby
-# SIAlertViewTransitionStyleSlideFromBottom (default)
-# SIAlertViewTransitionStyleSlideFromTop
-# SIAlertViewTransitionStyleFade
-# SIAlertViewTransitionStyleBounce
-# SIAlertViewTransitionStyleDropDown
-```
+## Transition
 
-And the following button types:
-```ruby
-# SIAlertViewButtonTypeDefault
-# SIAlertViewButtonTypeDestructive
-# SIAlertViewButtonTypeCancel
-```
+Here's the string you can pass to the transition property of the constructor (secondary). The default value is `"slide from bottom"`.
+
+* `"drop down"`
+* `"slide from down"`
+* `"slide from up"`
+* `"fade"`
+* `"bounce"`
+
+## Buttons
+
+You have 3 types of styling for the buttons (secondary). The default value is `"default"` (that's original).
+
+* `"default"`
+* `"destructive"`
+* `"cancel"`
 
 ## To-do
 
