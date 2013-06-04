@@ -59,7 +59,7 @@ Here's the string you can pass to the transition property of the constructor (se
 
 ## Buttons
 
-You have 3 types of styling for the buttons (secondary). The default value is `"default"` (that's original).
+You have 3 types of styling for buttons (secondary). The default value is `"default"` (that's original).
 
 * `"default"`
 * `"destructive"`
