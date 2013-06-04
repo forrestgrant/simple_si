@@ -3,25 +3,26 @@ SimpleSI for RubyMotion
 
 I wanted a dead simple way to call SIAlertView (https://github.com/Sumi-Interactive/SIAlertView) in one line, similar to BubbleWrap's `App.alert()`.
 
-
-## Installation
-
-```ruby
-gem install simple_si
-```
-
 ## Setup
-
-Edit the `Rakefile` of your RubyMotion project and add the following require line:
-
-```ruby
-require 'simple_si'
-```
-or
 
 Add simple_si to your Gemfile, and run `bundle install`:
 ```ruby
+gem 'motion-cocoapods'
 gem 'simple_si'
+```
+
+Edit the Rakefile of your RubyMotion project and add the following require line:
+```ruby
+# After the line that require Rubymotion
+require 'bundler'
+Bundler.require
+```
+
+Then add SIAlertView to your pods list in your Rakefile:
+```ruby
+app.pods do
+  pod 'SIAlertView'
+end
 ```
 
 Usage
