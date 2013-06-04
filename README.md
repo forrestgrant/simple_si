@@ -39,7 +39,7 @@ Custom:
 SimpleSI.alert({
   title: "My App",
   message: "Are you sure?",
-  transition: "drop_down", # or "slide_from_down", "slide_from_up", "fade" or "bounce"
+  transition: "drop_down", # or "slide_from_bottom", "slide_from_top", "fade" or "bounce"
   buttons: [
     {title: "Destroy", action: :destroy}, # no type specify become default styling
     {title: "Cancel", type: "cancel"} # action is secondary
