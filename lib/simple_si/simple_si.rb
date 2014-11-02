@@ -30,12 +30,12 @@ module SimpleSI
 
   def transitionBuild(transition)
     return case transition
-      when "slide_from_bottom" then SIAlertViewTransitionStyleSlideFromBottom
-      when "slide_from_top" then SIAlertViewTransitionStyleSlideFromTop
-      when "fade" then SIAlertViewTransitionStyleFade
-      when "bounce" then SIAlertViewTransitionStyleBounce
-      when "drop_down" then SIAlertViewTransitionStyleDropDown
-      else SIAlertViewTransitionStyleSlideFromBottom
+      when "slide_from_bottom" then ::SIAlertViewTransitionStyleSlideFromBottom
+      when "slide_from_top" then ::SIAlertViewTransitionStyleSlideFromTop
+      when "fade" then ::SIAlertViewTransitionStyleFade
+      when "bounce" then ::SIAlertViewTransitionStyleBounce
+      when "drop_down" then ::SIAlertViewTransitionStyleDropDown
+      else ::SIAlertViewTransitionStyleSlideFromBottom
     end
   end
 
