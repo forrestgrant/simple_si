@@ -18,10 +18,16 @@ module SimpleSI
     alert.transitionStyle = @transition
 
     @buttons.each do |b|
+      if b[:payload]
+        @action_proc = proc {|a| @delegate.send(b[:action], b[:payload]) if b[:action]}
+      else
+        @action_proc = proc {|a| @delegate.send(b[:action]) if b[:action]}
+      end
+
       alert.addButtonWithTitle(
         b[:title],
         type: b[:type],
-        handler: proc {|a| @delegate.send(b[:action]) if b[:action]}
+        handler: @action_proc
       )
     end
 
